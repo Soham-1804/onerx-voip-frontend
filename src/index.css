@@ -1,0 +1,183 @@
+:root {
+  /* Brand Colors - Terra Cotta */
+  --primary-terra: #CC785C;
+  /* Master Brand Color */
+  --primary-terra-hover: #B05A35;
+  /* Terra 600 */
+
+  /* Functional - System States */
+  --state-success: #065F46;
+  --state-warning: #92400E;
+  --state-error: #991B1B;
+  --state-info: #1E40AF;
+
+  /* AI Activation */
+  --ai-violet: #5B21B6;
+
+  /* Warm Neutrals */
+  --bg-main: #FFFFFF;
+  --bg-sidebar: #1A1512;
+  /* Warm Neutral 950 */
+  --bg-card: #FFFFFF;
+  --bg-mute: #FDF5F2;
+  /* Warm Neutral 50 */
+
+  --text-main: #2E2520;
+  /* Warm Neutral 800 */
+  --text-muted: #6B5C54;
+  /* Warm Neutral 600 */
+  --text-on-dark: #FDF5F2;
+  /* Warm Neutral 50 */
+
+  --border-color: #E0D5D0;
+  /* Warm Neutral 200 */
+
+  /* Layout */
+  --sidebar-width: 260px;
+  --sidebar-collapsed-width: 80px;
+  --header-height: 70px;
+
+  /* Effects - Tinted with Warm Neutral 950 (#1A1512) for brand consistency */
+  --shadow-sm: 0 1px 2px 0 rgba(26, 21, 18, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(26, 21, 18, 0.1), 0 2px 4px -2px rgba(26, 21, 18, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(26, 21, 18, 0.1), 0 4px 6px -4px rgba(26, 21, 18, 0.1);
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--bg-mute);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Base UI Components */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-terra);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-terra-hover);
+}
+
+.btn-outline {
+  border: 1px solid var(--border-color);
+  background-color: white;
+}
+
+.btn-outline:hover {
+  background-color: var(--bg-mute);
+  border-color: var(--text-muted);
+}
+
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Badges using functional text colors and 10% opacity backgrounds */
+.badge-success {
+  background-color: rgba(6, 95, 70, 0.1);
+  color: var(--state-success);
+}
+
+.badge-warning {
+  background-color: rgba(146, 64, 14, 0.1);
+  color: var(--state-warning);
+}
+
+.badge-error {
+  background-color: rgba(153, 27, 27, 0.1);
+  color: var(--state-error);
+}
+
+.badge-info {
+  background-color: rgba(30, 64, 175, 0.1);
+  color: var(--state-info);
+}
+
+/* Page Styles */
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.page-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--primary-terra);
+}
+
+.page-subtitle {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.placeholder-card {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-style: italic;
+  border: 2px dashed var(--border-color);
+  background: none;
+}

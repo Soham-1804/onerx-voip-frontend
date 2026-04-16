@@ -1,0 +1,31 @@
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* Sidebar width + spacing */
+  margin-left: var(--sidebar-width);
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 0; /* Prevents overflow issues */
+}
+
+.sidebar.collapsed + .main-wrapper {
+  margin-left: var(--sidebar-collapsed-width);
+}
+
+.content-area {
+  flex: 1;
+  padding: 2rem;
+  background-color: var(--bg-mute);
+  overflow-y: auto;
+}
+
+/* Specific fix for when layout component is used but sidebar is fixed */
+body:has(.sidebar.collapsed) .main-wrapper {
+  margin-left: var(--sidebar-collapsed-width);
+}

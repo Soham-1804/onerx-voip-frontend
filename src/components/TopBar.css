@@ -1,0 +1,139 @@
+.top-bar {
+  height: var(--header-height);
+  padding: 0 2rem;
+  background-color: white;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+}
+
+.search-container {
+  flex: 1;
+  max-width: 480px;
+}
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--text-muted);
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.625rem 1rem 0.625rem 2.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-mute);
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  background-color: white;
+  border-color: var(--primary-teal);
+  box-shadow: 0 0 0 3px rgba(0, 180, 166, 0.1);
+}
+
+.top-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.compliance-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #F0FDFA;
+  border: 1px solid #CCFBF1;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-md);
+  color: #0F766E;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.canada-flag {
+  font-size: 1rem;
+}
+
+.icon-btn {
+  position: relative;
+  color: var(--text-muted);
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+  background-color: var(--bg-mute);
+  color: var(--text-main);
+}
+
+.notification-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-red);
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.user-profile:hover {
+  background-color: var(--bg-mute);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  background-color: var(--bg-mute);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-navy);
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.user-role {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.chevron {
+  color: var(--text-muted);
+}

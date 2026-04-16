@@ -1,0 +1,386 @@
+.softphone-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  grid-template-rows: auto auto;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.dialer-container {
+  grid-row: 1 / 3;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: white;
+  min-height: 600px;
+}
+
+.dialer-header {
+  display: flex;
+  justify-content: center;
+}
+
+.status-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  background-color: var(--bg-mute);
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-pill.available .status-dot { background-color: var(--accent-green); box-shadow: 0 0 8px var(--accent-green); }
+.status-pill.busy .status-dot { background-color: var(--accent-red); }
+.status-pill.dnd .status-dot { background-color: var(--primary-navy); }
+.status-pill.on-call .status-dot { background-color: var(--primary-teal); animation: pulse 2s infinite; }
+
+.status-pill select {
+  border: none;
+  background: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-main);
+  outline: none;
+  cursor: pointer;
+}
+
+.call-display {
+  background-color: var(--bg-mute);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+}
+
+.dial-input-view {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.dial-input {
+  width: 100%;
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  text-align: center;
+  letter-spacing: 0.05em;
+  outline: none;
+  padding: 0.5rem;
+}
+
+.backspace-btn {
+  color: var(--text-muted);
+  padding: 0.5rem;
+}
+
+.backspace-btn:hover { color: var(--accent-red); }
+
+.active-call-view {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.caller-avatar {
+  width: 64px;
+  height: 64px;
+  background-color: var(--primary-teal);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.caller-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.caller-id {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+}
+
+.call-status {
+  font-size: 0.8125rem;
+  color: var(--primary-teal);
+  font-weight: 500;
+}
+
+.call-timer {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  font-variant-numeric: tabular-nums;
+}
+
+.dialpad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.dial-btn {
+  height: 64px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.dial-btn:hover:not(:disabled) {
+  background-color: var(--bg-mute);
+  border-color: var(--primary-teal);
+  transform: translateY(-2px);
+}
+
+.dial-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.dial-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-main {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+}
+
+.btn-sub {
+  font-size: 0.625rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.call-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.btn-call {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--accent-green);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-call:hover:not(:disabled) {
+  transform: scale(1.05);
+  background-color: #059669;
+}
+
+.btn-call:disabled {
+  background-color: #D1D5DB;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.active-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.action-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.control-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.control-btn.active {
+  color: var(--primary-teal);
+}
+
+.btn-end-call {
+  width: 100%;
+  height: 56px;
+  border-radius: var(--radius-lg);
+  background-color: var(--accent-red);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recent-calls-container {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.recent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.recent-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+.recent-item:hover {
+  background-color: var(--bg-mute);
+}
+
+.recent-avatar {
+  width: 32px;
+  height: 32px;
+  background-color: var(--border-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+}
+
+.recent-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.recent-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.recent-sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.recent-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.recent-duration {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.call-back-btn {
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: var(--accent-green);
+  background-color: #ECFDF5;
+}
+
+.view-more-btn {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--primary-teal);
+  border-top: 1px solid var(--border-color);
+  margin-top: 0.5rem;
+}
+
+.softphone-settings {
+  padding: 1.5rem;
+}
+
+.audio-devices {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.audio-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.audio-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.audio-select {
+  padding: 0.625rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  font-size: 0.8125rem;
+  background-color: var(--bg-mute);
+  color: var(--text-main);
+  outline: none;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.volume-slider {
+  flex: 1;
+  height: 4px;
+  -webkit-appearance: none;
+  background: var(--border-color);
+  border-radius: 2px;
+  outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  background: var(--primary-teal);
+  border-radius: 50%;
+  cursor: pointer;
+}
